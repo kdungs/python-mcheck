@@ -24,7 +24,7 @@ will result in the output `Value has to be a power of two.`.
 In terms of (pseudo-)Haskell, we could define `Check` as follows:
 
 ```haskell
-data Check a = Pass a | Fail Message
+data Check a = Pass a | Fail String 
 
 instance Monad Check where
     return x = Pass x  -- is mcheck.return_
