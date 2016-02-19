@@ -48,9 +48,17 @@ and implemented through `mcheck.compose` and the convenience function
 `mcheck.compose_many` which takes an arbitrary number of functions (`a -> m b`)
 and folds that list using Kleisli composition.
 
-And then there is `mcheck.lift` which implements `liftM` (or `fmap`) in
-which in Haskell terms is defined as
+And then there is `mcheck.lift` which is technically not `liftM` (or `fmap`)
+which is defined as
 
 ```haskell
 liftM :: Monad m => (a -> b) -> m a -> m b
 ```
+
+while `mcheck.lift` is defined as
+
+```haskell
+lift :: (a -> bool) -> String -> (a -> Check a)
+```
+
+so maybe `lift` is not such a good name after all…
