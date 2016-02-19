@@ -78,7 +78,7 @@ def compose_many(*fs):
 
 def lift(f, message):
     """ Lifts a boolean function into the realm of the Check monad.
-        lift :: (a -> bool) -> (a -> Check a)
+        lift :: (a -> bool) -> String -> (a -> Check a)
     """
     def lift_impl(x):
         if f(x):
