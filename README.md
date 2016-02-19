@@ -1,5 +1,7 @@
 # mcheck: check monad for Python
 
+_In Haskell terms: `Either String a`_
+
 Allows you to build pipelines of checks on values. For example
 
 ```python
