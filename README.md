@@ -39,7 +39,7 @@ instance Monad Check where
 we also have Kleisli composition `>=>` which is defined as
 
 ```haskell
-(>=>) :: (a -> m b) -> (b -> m c) -> a -> m c
+(>=>) :: Monad m => (a -> m b) -> (b -> m c) -> a -> m c
 ```
 
 and implemented through `mcheck.compose` and the convenience function
@@ -47,7 +47,7 @@ and implemented through `mcheck.compose` and the convenience function
 and folds that list using Kleisli composition.
 
 And then there is `mcheck.lift` which implements `liftM` (or `fmap`) in
-Haskell terms which is defined as
+which in Haskell terms is defined as
 
 ```haskell
 liftM :: Monad m => (a -> b) -> m a -> m b
