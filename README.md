@@ -3,7 +3,7 @@
 Allows you to build pipelines of checks on values. For example
 
 ```python
-import check as c
+import mcheck as c
 
 pipeline = c.compose_many(
   c.lift(lambda x: x > 0, 'Value has to be positive.'),
